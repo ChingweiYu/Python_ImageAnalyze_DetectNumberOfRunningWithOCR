@@ -1,4 +1,4 @@
-# Python_ImageAnalyze_DetectNumberOfRunningWithORG
+# Python_ImageAnalyze_DetectNumberOfRunningWithOCR
 	
 1. source picture input "inn" file
 2. run main.py
