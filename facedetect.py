@@ -2,7 +2,6 @@
 
 import numpy as np
 import cv2
-import Image
 # local modules
 from video import create_capture
 from common import clock, draw_str

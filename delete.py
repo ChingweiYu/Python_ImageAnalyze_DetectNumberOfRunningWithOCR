@@ -3,10 +3,10 @@ import os
 
 def main():
     try:
-        for Tjpg in os.listdir("build/sample"):
-            os.remove("build/sample/"+Tjpg)#檔案路徑和名稱
+        for Tjpg in os.listdir("build/sample1"):
+            os.remove("build/sample1/"+Tjpg)#檔案路徑和名稱
     except:
-        print os.listdir("build/sample")
+        pass
 
 def filedir(FN):
     try:

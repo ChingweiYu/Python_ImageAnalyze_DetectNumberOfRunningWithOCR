@@ -1,7 +1,6 @@
 # -*- coding: cp950 -*-
 import numpy as np
 import cv2
-import Image
 import resize
 import text_betsu as tb
 import text_detect as td
@@ -125,25 +124,11 @@ for Tjpg in os.listdir("inn"):
     detectinn = main(Tjpg)
     img = cv2.imread('./inn/'+str(Tjpg))
     #if Tjpg[0:5]==detectinn:
-    if len(detectinn)==5:
-        successful+=1
-        Scount=len(os.listdir("success"))+1
-        nname = str(detectinn)+"("+str(Scount)+").jpg"
-        cv2.imwrite("success/"+nname,img)
-    else:
-        
-        cv2.imwrite("error/"+str(Tjpg),img)
-        
 
+        
     DC+=1
 
 print errortime
-
-R=successful/(float(count))*100
-#main('2048_b0e6b36fbe10f376d15111260bb2fd42.jpg')
-print successful,count
-print R
-
 print starttime
 print datetime.datetime.now()
 print datetime.datetime.now()-starttime

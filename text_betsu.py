@@ -1,7 +1,6 @@
 # -*- coding: cp950 -*-
 import numpy as np
 import cv2
-import Image
 import delete as de
 
 
@@ -13,7 +12,7 @@ def main(name):
 
     ret,thresh = cv2.threshold(imgray,127,255,0)
 
-    im2, contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
     cnts = sorted([(c, cv2.boundingRect(c)[0]) for c in contours], key=lambda x:x[1])
     arr = []
@@ -22,7 +21,7 @@ def main(name):
     for index, (c, _) in enumerate(cnts):
             (x, y, w, h) = cv2.boundingRect(c)
             try:
-                # 只將寬高大於 數值 視為數字留存
+                #
                 #if w > 4 and h > 25 and w<60 and h<100:
                 if w > 4 and h > 25 and w<60 and h<100:
                 
@@ -51,7 +50,7 @@ def main(name):
                         if num == 10:
                             num=1
                             Lcode+='w'
-                        cv2.imwrite('build/sample/'+Lcode+str(num)+".jpg",roi)
+                        cv2.imwrite('build/sample1/'+Lcode+str(num)+".jpg",roi)
                         num=num+1
             except IndexError:
                     pass
